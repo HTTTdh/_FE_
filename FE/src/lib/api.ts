@@ -42,7 +42,6 @@ api.interceptors.response.use(
 export const authApi = {
   login: (credentials: { username: string; password: string }) =>
     api.post('/api/auth/login', credentials).then(res => res.data),
-  
   register: (userData: { username: string; password: string; ho_ten: string; sdt: string; cap: number; PhongBanId: string }) =>
     api.post('/api/auth/register', userData).then(res => res.data),
   

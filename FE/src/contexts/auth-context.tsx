@@ -55,6 +55,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       
       if (response.success !== false) {
         setUser(response.user)
+        console.log('Login successful:', response.user)
+        Cookies.set('token', response.token, { expires: 7 }) // Store token for 7 days
+        console.log('Token stored in cookies:', Cookies.get('token'))
         toast.success('Đăng nhập thành công!')
         router.push('/dashboard')
       } else {

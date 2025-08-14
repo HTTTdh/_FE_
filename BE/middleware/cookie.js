@@ -23,7 +23,8 @@ const tokenCookie = async (user, statusCode, res) => {
     res.status(statusCode).json({
         success : true,
         message : "Đăng nhập thành công",
-        token
+        token,
+        user: user,
     })
 
 
